@@ -4,6 +4,7 @@ import './App.css'
 import { Header } from './component/header'
 import { Cart } from './component/cart/cart'
 import { Route, Routes } from 'react-router-dom'
+import { Address } from './component/address/address'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,6 +13,7 @@ function App() {
     <div className="App">
       
       <Header/>
+      
       
     </div>
   )

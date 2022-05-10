@@ -27,3 +27,14 @@
     color: green;
     font-size: 2rem;
 }
+.btnpayment{
+    padding: 10px;
+    border-radius: 20px;
+    background-color: palevioletred;
+
+}
+.btnpayment img{
+    height: 30px;
+    width: 40px;
+
+}

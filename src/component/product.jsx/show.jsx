@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
-import { useParams } from "react-router-dom"
-import { addCart, noOfCart } from "../../Redux/cart/action"
+import { useParams,useNavigate } from "react-router-dom"
+import { addCart, discountPrice, noOfCart, totalPrice } from "../../Redux/cart/action"
 import { Header } from "../header"
 import "./product.css"
 
 export const Show=()=>{
     const {userid}=useParams()
     const dispatch=useDispatch()
+    const navigate=useNavigate()
+
     
 
     
@@ -25,7 +27,8 @@ export const Show=()=>{
             setData(data1)
         }
     }
-    // console.log(data.images)
+    
+    
     
 
     return (
@@ -40,10 +43,18 @@ export const Show=()=>{
 
                     {/* <img src={data2.images[0]} alt=""  /> */}
                     <button onClick={()=>{
+                        
                         dispatch(noOfCart(1))
                         dispatch(addCart(data2))
+                        dispatch(totalPrice(data2.discounted_price))
+                        dispatch(discountPrice(data2.original_price))
                         
                     }}>ADDTOCART</button>
+                    <button onClick={()=>{
+                        navigate("/cart")
+
+
+                    }}>GOTOCART</button>
                     {/* <p>{data2.images.length} similar Product</p> */}
                 
 

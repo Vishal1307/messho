@@ -11,6 +11,8 @@ import { WomenEastern } from "./product.jsx/women_eastern"
 import { WomenWestern } from "./product.jsx/women_western"
 import "./product.jsx/product.css"
 import { Payment } from "./product.jsx/payment"
+import { Address } from "./address/address"
+import { Summary } from "./product.jsx/summary"
 export const Rout=()=>{
     return (
         <div>
@@ -56,6 +58,8 @@ export const Rout=()=>{
                     <Route path="/kids/:userid" element={<Show/>}></Route>
                     <Route path='/cart' element={<Cart/>}></Route>
                     <Route path="/payment" element={<Payment/>}></Route>
+                    <Route path="/address" element={<Address/>}></Route>
+                    <Route path="/summary" element={<Summary/>}></Route>
 
 
                 </Routes>
