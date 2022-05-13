@@ -1,11 +1,17 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+
+// import Pagination from '@material-ui/lab/Pagination';
+// import { createSvgIcon } from "@mui/material";
+// import { useControlled } from "@mui/material";
 import "./product.css"
 
 export const WomenWestern=()=>{
     const [wester,setWestern]=useState([])
     const {data}=useSelector((store)=>store.data)
+    // const {auth}=useSelector((store)=>store.auth)
+    // const navigate=useNavigate()
     const data1=data.filter((cv)=>{
         return cv.category== "Dresses"
     })
@@ -36,6 +42,7 @@ export const WomenWestern=()=>{
                 }
                 
             </div>
+            {/* <Pagination count={10}/> */}
         </div>
     )
 }

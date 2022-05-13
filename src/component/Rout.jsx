@@ -13,10 +13,15 @@ import "./product.jsx/product.css"
 import { Payment } from "./product.jsx/payment"
 import { Address } from "./address/address"
 import { Summary } from "./product.jsx/summary"
+import { SignUp } from "./login/signup"
+import { Login } from "./login/login"
+import { MainPage } from "./mainpage/mainpage"
+import { Profile } from "./login/profile"
+import "./product.jsx/product.css"
 export const Rout=()=>{
     return (
         <div>
-            <div>
+            <div className="route">
 
 
                 <Link to="/WomenEthnic">Women Ethnic</Link>
@@ -28,12 +33,13 @@ export const Rout=()=>{
                 <Link to="/Home">Home&Kitchen</Link>
                 <Link to="/kids">Kids Electronics</Link>
                 <div className="cart">
-                    <Link to="/cart">Cart</Link>
+                    {/* <Link to="/cart">Cart</Link> */}
 
                 </div>
             </div>
             <div>
                 <Routes>
+                    <Route path="/" element={<MainPage/>}></Route>
                     <Route path="/WomenEthnic" element={<WomenEastern/>}></Route>
                     <Route path="/WomenEthnic/:userid" element={<Show/>}></Route>
                     <Route path="/WomenWestern" element={<WomenWestern/>}></Route>
@@ -56,10 +62,17 @@ export const Rout=()=>{
 
                     <Route path="/kids" element={<Kid/>}></Route>
                     <Route path="/kids/:userid" element={<Show/>}></Route>
+                    <Route path="/:userid" element={<Show/>}></Route>
                     <Route path='/cart' element={<Cart/>}></Route>
                     <Route path="/payment" element={<Payment/>}></Route>
                     <Route path="/address" element={<Address/>}></Route>
                     <Route path="/summary" element={<Summary/>}></Route>
+                    <Route path="/signup" element={<SignUp/>}></Route>
+                    <Route path="/login" element={<Login/>}></Route>
+                    <Route path="/signup" element={<SignUp/>}></Route>
+                    <Route path="/login" element={<Login/>}></Route>
+
+                    <Route path="/profile" element={<Profile/>}></Route>
 
 
                 </Routes>

@@ -1,0 +1,21 @@
+.navbar{
+    border: 1px solid black;
+    height: 90px;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.5rem;
+}
+.navbar input{
+    padding: 13px 70px;
+    font-size: 1.4rem;
+    border-radius: 20px;
+    
+}
+.navbar img{
+    width: 200px;
+
+
+}

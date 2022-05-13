@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import "./product.css"
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 
 export const WomenEastern=()=>{
     const [WomenEastern,setEastern]=useState([])
+    // const navigate=useNavigate()
     const {data}=useSelector((store)=>store.data)
+    // const {auth}=useSelector((store)=>store.auth)
+    
+
     const data1=data.filter((cv)=>{
         return cv.category== "Sarees"
     })
@@ -27,11 +31,11 @@ export const WomenEastern=()=>{
     
 
     return (
-        <div>
+        <div className="maindev">
            <div className="product">
                 {
                     WomenEastern.map((cv)=>{
-                        return <Link to={`/WomenEthnic/${cv.id}`} key={cv.id}>
+                        return <Link to={`/WomenEthnic/${cv.id}`} key={cv.id} >
                             <div className="product2">
                                 <img src={cv.images} alt="" />
                                 <h2>{cv.title}</h2>

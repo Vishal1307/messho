@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { useParams,useNavigate } from "react-router-dom"
 import { addCart, discountPrice, noOfCart, totalPrice } from "../../Redux/cart/action"
 import { Header } from "../header"
@@ -14,6 +14,8 @@ export const Show=()=>{
 
     
     const [data2,setData]=useState([])
+    const {auth}=useSelector((store)=>store.auth)
+    
     useEffect(()=>{
         const d=getData()
         d()
@@ -30,31 +32,36 @@ export const Show=()=>{
     
     
     
+    
+    
 
-    return (
+    return auth?(
         <div>
            
 
             <div className="idshow">
-                <div>
+                <div className="showbutton">
                     
                         
 
 
-                    {/* <img src={data2.images[0]} alt=""  /> */}
-                    <button onClick={()=>{
-                        
-                        dispatch(noOfCart(1))
-                        dispatch(addCart(data2))
-                        dispatch(totalPrice(data2.discounted_price))
-                        dispatch(discountPrice(data2.original_price))
-                        
-                    }}>ADDTOCART</button>
-                    <button onClick={()=>{
-                        navigate("/cart")
+                    <img src={data2.images} alt=""  />
+                    
 
-
-                    }}>GOTOCART</button>
+                        <button onClick={()=>{
+                            
+                            dispatch(noOfCart(1))
+                            dispatch(addCart(data2))
+                            dispatch(totalPrice(data2.discounted_price))
+                            dispatch(discountPrice(data2.original_price))
+                            
+                        }}>ADDTOCART</button>
+                        <button onClick={()=>{
+                            navigate("/cart")
+                            
+                            
+                        }}>GOTOCART</button>
+                    
                     {/* <p>{data2.images.length} similar Product</p> */}
                 
 
@@ -64,13 +71,15 @@ export const Show=()=>{
                     
                 
                 </div>
-                <div>
+                <div className="showDetail">
                     <h2>Product Detail</h2>
-                    <p>Name:{data2.title}</p>
+                    <p>title:{data2.title}</p>
                     <p>category:{data2.category}</p>
                     <p>original_price:₹{data2.original_price}</p>
-                    <p>iscounted_price:{data2.iscounted_price}</p>
+                    <p>discounted_price:{data2.discounted_price}</p>
                     <p>size:{data2.sizes}</p>
+                    <p>rating:{data2.rating}</p>
+                    <p>seller_id:{data2.seller_id}</p>
 
 
                 </div>
@@ -78,5 +87,5 @@ export const Show=()=>{
 
             </div>
         </div>
-    )
+    ):navigate("/login")
 }
