@@ -1,9 +1,10 @@
-import { ADD_DATA, ADD_DATA_LOADING, ADD_DATA_SUCESS, GET_DATA_ERROR } from "./actionType"
+import { ADD_DATA, ADD_DATA_LOADING, ADD_DATA_SUCESS, GET_DATA_ERROR, GET_INPUT_DATA } from "./actionType"
 
 const init={
     data:[],
     loding:false,
-    error:false
+    error:false,
+    inp:[]
 
 }
 export const productReducer=(store=init,{type,payload})=>{
@@ -16,6 +17,8 @@ export const productReducer=(store=init,{type,payload})=>{
             return {...store,loding:false}
         case GET_DATA_ERROR:
             return {...store,error:true}
+        case GET_INPUT_DATA:
+            return {...store,inp:payload}
         default:
             return {...store}
         

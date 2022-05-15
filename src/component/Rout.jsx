@@ -18,6 +18,7 @@ import { Login } from "./login/login"
 import { MainPage } from "./mainpage/mainpage"
 import { Profile } from "./login/profile"
 import "./product.jsx/product.css"
+import { InputItem } from "./product.jsx/inputItem"
 export const Rout=()=>{
     return (
         <div>
@@ -73,6 +74,7 @@ export const Rout=()=>{
                     <Route path="/login" element={<Login/>}></Route>
 
                     <Route path="/profile" element={<Profile/>}></Route>
+                    <Route path="/serchItem" element={<InputItem/>}></Route>
 
 
                 </Routes>
