@@ -24,7 +24,7 @@ export const Show=()=>{
     
     const getData=()=>{
         return async ()=>{
-            const res=await fetch(` http://localhost:3002/products/${userid}`)
+            const res=await fetch(` https://json-tacker.herokuapp.com/products/${userid}`)
             const data1=await res.json()
             setData(data1)
         }

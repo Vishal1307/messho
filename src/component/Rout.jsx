@@ -19,7 +19,9 @@ import { MainPage } from "./mainpage/mainpage"
 import { Profile } from "./login/profile"
 import "./product.jsx/product.css"
 import { InputItem } from "./product.jsx/inputItem"
+import { useSelector } from "react-redux"
 export const Rout=()=>{
+    const {no}=useSelector((store)=>store.cart)
     return (
         <div>
             <div className="route">

@@ -18,7 +18,7 @@ export const Header=()=>{
     const getData=()=>{
         return async ()=>{
             dispatch(addDataLoding())
-            let res= await fetch("http://localhost:3002/products")
+            let res= await fetch("https://json-tacker.herokuapp.com/products")
             let data=await res.json()
             dispatch(addDataSucess())
             dispatch(addData(data))
