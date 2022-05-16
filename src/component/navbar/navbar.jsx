@@ -19,7 +19,7 @@ export const Logo=()=>{
             setText([])
             return
         }
-        timeOut.current= setTimeout(()=>{ fetch(`http://localhost:3002/products?q=${inputRef.current.value}`).then(async (response)=>{
+        timeOut.current= setTimeout(()=>{ fetch(`https://json-tacker.herokuapp.com/products?q=${inputRef.current.value}`).then(async (response)=>{
                 if(!response.ok){
                     console.log("something went wrong")
                 }
