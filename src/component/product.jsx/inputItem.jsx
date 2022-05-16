@@ -9,7 +9,7 @@ export const InputItem=()=>{
         <div>
             <div className="product">
                 {
-                    inp.map((cv)=>{
+                    inp.length>0? inp.map((cv)=>{
                         return <Link to={`/${cv.id}`} key={cv.id}>
                             <div className="product2">
                                 <img src={cv.images} alt="" />
@@ -18,7 +18,7 @@ export const InputItem=()=>{
                                 
                             </div>
                         </Link>
-                    })
+                    }):"there is no any serch item"
 
                 }
                 

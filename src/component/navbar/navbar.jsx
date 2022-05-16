@@ -49,9 +49,9 @@ export const Logo=()=>{
     
     return (
         <div className="navbar">
-            <Link to="/"><img src="https://seosandwitch.com/wp-content/uploads/2021/07/How-To-Sell-On-Meesho.jpg" alt="" />
+            <Link to="/"><img src="https://seosandwitch.com/wp-content/uploads/2021/07/How-To-Sell-On-Meesho.jpg" alt="image is loading" />
             </Link>
-            <Link to="serchItem"><input type="text" name="serch" id="" ref={inputRef} onInput={handleChnage} />
+            <Link to="serchItem"><input type="text" name="serch" id="" ref={inputRef} onInput={handleChnage} placeholder="Serch Item" />
             </Link>
             <Link to="/cart">Cart</Link>
             <Link to="/profile">Profile</Link>
