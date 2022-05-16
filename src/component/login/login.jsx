@@ -25,7 +25,7 @@ export const Login=()=>{
            setLogin(true)
            setErr(false)
            dispatch(addAuth())
-           navigate(-1)
+           navigate("/")
 
            
        }
